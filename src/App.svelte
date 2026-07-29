@@ -316,17 +316,7 @@ Because Svelte escapes HTML by default to protect against XSS (Cross-Site Script
 
 -->
 
-
-
-
-
-
-
-
-
-
-
-
+<!--
 //Understanding $derived
 //Changes because the user/app updates it directly? → $state
 //Calculated from other reactive values? → $derived
@@ -349,3 +339,153 @@ Because Svelte escapes HTML by default to protect against XSS (Cross-Site Script
 //IN react we use useMemo
 //DOne, no No dependency array. No callback. No manual tracking.
 //Internal Flow Compiler sees: let total = $derived(price * quantity);, it watches for price & quantity
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+//$effect : This is the modern replacement for much of what people previously did with reactive statements and many useEffect use cases
+
+<script>
+
+  let count = $state(0);
+
+  $effect(() => {
+    console.log("count changed: ", count);
+  });
+
+  function inc() {
+    count ++;
+  }
+
+</script>
+
+<h1>{count}</h1>
+
+<button onclick={inc}> Increment </button>
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+//Props (Component Communication)
+
+<script>
+
+  import UserCard from "./UserCard.svelte"
+
+  let user = {
+    name:"Ankit", 
+    age:24
+  }
+
+</script>
+
+
+<UserCard user={user} />
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+//Snippets and @render
+
+<script>
+    import Card from "./Card.svelte";
+</script>
+
+<Card>
+    {#snippet content()}
+        <h2>Hello!</h2>
+        <p>Learning Svelte 5.</p>
+    {/snippet}
+</Card>
+-->
+
+
+
+
+
+
+
+
+
+
+
+<!--
+//Component Events (Child → Parent Communication)
+<script>
+import Counter from "./Counter.svelte"
+
+	function handleIncrement(value) {
+		console.log("Child count in parent component :", value);
+	}
+
+</script>
+
+<Counter onIncrement={handleIncrement} />
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Bindings Between Parent and Child ($bindable)
+//This prop is allowed to participate in two-way binding
+//child to update the parent's value
+
+<script>
+	import TextInput from "./TextInput.svelte";
+
+	let username = $state("Ankit");
+
+</script>
+
+<TextInput bind:value={username} />
+
+<p>Username: {username}</p>
+
+
+
