@@ -471,7 +471,7 @@ import Counter from "./Counter.svelte"
 
 
 
-
+<!--
 //Bindings Between Parent and Child ($bindable)
 //This prop is allowed to participate in two-way binding
 //child to update the parent's value
@@ -487,5 +487,26 @@ import Counter from "./Counter.svelte"
 
 <p>Username: {username}</p>
 
+
+-->
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Svelte  --> Svelte KIT
+//react --> Next JS
+
+//Svelte +  Routing  + SSR  + API + Layouts + Server + Deployment  -> SvelteKit
+//SvelteKit is a framework built on top of Svelte.
+//What Does SvelteKit Add? -> Routing, Layout, SSR, API, Loading data, 
 
 
