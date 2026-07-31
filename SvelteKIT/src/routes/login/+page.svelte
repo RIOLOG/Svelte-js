@@ -1,0 +1,32 @@
+<form method="POST">
+
+    <label>
+
+        Username
+
+    </label>
+
+    <input
+        name="username">
+
+    <br>
+
+    <label>
+
+        Password
+
+    </label>
+
+    <input
+        name="password"
+        type="password">
+
+    <br><br>
+
+    <button>
+
+        Login
+
+    </button>
+
+</form>
