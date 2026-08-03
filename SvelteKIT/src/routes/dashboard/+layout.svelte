@@ -1,19 +1,52 @@
+<!--
+
 <script>
-    let { children } = $props();
+
+    let { data, children } = $props();
+
 </script>
 
-<div style="display:flex">
+<div>
 
-    <aside>
+Notifications:
 
-        Dashboard Sidebar
-
-    </aside>
-
-    <main>
-
-        {@render children()}
-
-    </main>
+{data.notifications}
 
 </div>
+
+<hr>
+
+{@render children()}
+
+-->
+
+
+
+
+
+
+
+
+<script>
+
+	let { children, data } = $props();
+
+</script>
+
+<h3>
+
+Dashboard Layout
+
+</h3>
+
+<p>
+
+Notifications :
+
+{data.notifications}
+
+</p>
+
+<hr>
+
+{@render children()}
